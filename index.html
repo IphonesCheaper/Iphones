@@ -1,67 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheap Iphones</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Buy iPhones</h1>
-    </header>
-    <main>
-        <section class="products">
-            <!-- Add as many product divs as needed for each iPhone -->
-            <div class="product">
-                <img src="iphone1.jpg" alt="iPhone 13">
-                <h2>iPhone 13</h2>
-                <p>$799</p>
-                <button class="buy-button" data-product="iPhone 13" data-price="799">Buy Now</button>
-            </div>
-            <div class="product">
-                <img src="iphone2.jpg" alt="iPhone 13 Pro">
-                <h2>iPhone 13 Pro</h2>
-                <p>$999</p>
-                <button class="buy-button" data-product="iPhone 13 Pro" data-price="999">Buy Now</button>
-            </div>
-            <div class="product">
-                <img src="iphone3.jpg" alt="iPhone 13 Pro Max">
-                <h2>iPhone 13 Pro Max</h2>
-                <p>$1099</p>
-                <button class="buy-button" data-product="iPhone 13 Pro Max" data-price="1099">Buy Now</button>
-            </div>
-            <!-- Continue adding more iPhone models here -->
-        </section>
-    </main>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Enter Your Details</h2>
-            <form id="payment-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last-name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
-                <label for="postcode">Postcode:</label>
-                <input type="text" id="postcode" name="postcode" required>
-                <input type="hidden" id="product" name="product">
-                <input type="hidden" id="price" name="price">
-                <button type="submit">Proceed to PayPal</button>
-            </form>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Buy iPhones. All rights reserved.</p>
-    </footer>
-
-    <script src="scripts.js"></script>
-</body>
-</html>
-
+<form id="checkoutForm" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="your@email.com">
+    <input type="hidden" name="item_name" value="iPhone">
+    <input type="hidden" name="amount" value="CALCULATED_PRICE_FROM_DB">
+    <input type="text" name="first_name" placeholder="First Name" required>
+    <input type="text" name="last_name" placeholder="Last Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="text" name="address1" placeholder="Address Line 1" required>
+    <input type="text" name="address2" placeholder="Address Line 2">
+    <input type="text" name="city" placeholder="City" required>
+    <input type="text" name="state" placeholder="State/Province" required>
+    <input type="text" name="zip" placeholder="Postal Code" required>
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+</form>
